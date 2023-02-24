@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
-
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
   # root "articles#index"
+
 
   get 'article' => 'articles#index'
   get 'article/:id' => 'articles#show'
@@ -11,6 +11,12 @@ Rails.application.routes.draw do
   put 'article/:id' => 'articles#update'
   delete 'article/:id' => 'articles#destroy'
 
-  # resources :article, only: [:index, :show, :create, :update, :destroy]
+  get 'user' => 'users#index'
+  get 'user/self' => 'users#show'
+  post 'user' => 'users#create'
+  put 'user/self' => 'users#update'
+  delete 'user/self' => 'users#destroy'
+
+  post 'login' => 'auth#login'
 
 end
