@@ -73,7 +73,7 @@ class UsersController < ApplicationController
 
     # Checking validation after assigning value as same as checking validation for form above
     return error_validation(@user.errors) if @user.invalid?
-    byebug
+
     # bang ! is just a naming convention that Ruby programmers use to denote that a method can be “dangerous”
     @user.save
 

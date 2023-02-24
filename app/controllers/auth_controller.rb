@@ -11,7 +11,7 @@ class AuthController < ApplicationController
     return error_unauthorized("Access Denied!") if @user.nil? || BCrypt::Password.new(@user.password) != form.password
 
     # Calls module from concern file response.rb
-    render_success({ "token": @user.token })
+    render_success({ token: @user.token })
 
   # Exception handling when user record is not found
   rescue ActiveRecord::RecordNotFound

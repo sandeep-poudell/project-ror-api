@@ -12,7 +12,7 @@
 # Helpers are used for formatting some values. Here, various methods defined in UserHelper from user_helper.rb helper is used
 
 json.id user.id
-json.full_name format_name
+json.full_name user.first_name
 json.first_name_kana user.first_name_kana
 json.last_name_kana user.last_name_kana
 json.age user.age
