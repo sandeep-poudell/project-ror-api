@@ -39,7 +39,7 @@ class UsersController < ApplicationController
     @user.birth_date = form.birth_date
     @user.height = form.height
     @user.weight = form.weight
-    @user.set_age(@user.birth_date)
+    @user.calculate_age(@user.birth_date)
     @user.token = Digest::UUID.uuid_v4
 
     # Checking validation after assigning value as same as checking validation for form above

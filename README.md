@@ -125,5 +125,72 @@ curl --location --request DELETE 'localhost:3000/user/self' \
 ```
 
 
+**POST AND COMMENT RESOURCE**
+
+1. Create a post
+```
+curl --location --request POST 'localhost:3000/posts' \
+--header 'token: e31bee8a-0671-4dee-bb1c-3e0a88abd8f4' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "title": "test 1",
+    "meta_title": "test 1",
+    "slug": "some_111slug_21-232121121",
+    "summary": "カタ",
+    "content": "test6testom"
+}'
+```
 
 
+2. Get all post by current logged in user
+```
+curl --location --request GET 'localhost:3000/posts' \
+--header 'token: e31bee8a-0671-4dee-bb1c-3e0a88abd8f4'
+```
+
+
+3. Get post By ID 
+```
+curl --location --request GET 'localhost:3000/posts/11' \
+--header 'token: e31bee8a-0671-4dee-bb1c-3e0a88abd8f4'
+```
+
+4. Update post
+```
+curl --location --request PUT 'localhost:3000/posts/2' \
+--header 'token: e31bee8a-0671-4dee-bb1c-3e0a88abd8f4' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "title": "test 1",
+    "content": "test11116testom"
+}'
+```
+
+5. Publish post
+```
+curl --location --request PATCH 'localhost:3000/posts/1/publish' \
+--header 'token: e31bee8a-0671-4dee-bb1c-3e0a88abd8f4'
+```
+
+6. UnPublish post
+```
+curl --location --request PATCH 'localhost:3000/posts/1/unpublish' \
+--header 'token: e31bee8a-0671-4dee-bb1c-3e0a88abd8f4'
+```
+
+7. Delete post
+```
+curl --location --request DELETE 'localhost:3000/posts/3' \
+--header 'token: e31bee8a-0671-4dee-bb1c-3e0a88abd8f4'
+```
+
+8. Comment On Post
+```
+curl --location --request POST 'localhost:3000/posts/1/comment' \
+--header 'token: e31bee8a-0671-4dee-bb1c-3e0a88abd8f4' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "title": "test 1",
+    "content": "test6testom"
+}'
+```

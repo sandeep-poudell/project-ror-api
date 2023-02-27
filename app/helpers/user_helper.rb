@@ -3,7 +3,7 @@
 # Helpers are modules that define methods that can be used in views to provide reusable code for common view-related tasks.
 # Helpers are typically used to keep the logic in views simple and easy to read, by encapsulating complex or repetitive view-related tasks in helper methods.
 
-# This UserHelper module is included in application_controller and used in _user.json.jbuilder partial in users view
+# This UserHelper module is included in application_controller and used in _post.json.jbuilder partial in users view
 module UserHelper
   def format_name(user)
     case user.gender
