@@ -1,6 +1,8 @@
-class UserCreateForm
+# frozen_string_literal: true
 
-  # This module provides a simple way to create form-like objects that do not inherit from ActiveRecord. By including this module we can add a number of common features to your Ruby classes, such as attribute accessors, mass-assignment, validations, and more.
+class UserCreateForm
+  # This module provides a simple way to create form-like objects that do not inherit from ActiveRecord.
+  # By including this module we can add a number of common features to your Ruby classes, such as attribute accessors, mass-assignment, validations, and more.
   include ActiveModel::Model
 
   # attr_accessor is a Ruby method that is used to define an attribute for a Ruby class. It creates a getter and setter method for the specified attribute that can be used to read or write its value.
@@ -44,7 +46,6 @@ class UserCreateForm
   validates :birth_date, presence: true
   validates :height, numericality: { only_integer: true, greater_than_or_equal_to: 50, less_than_or_equal_to: 500 }
   validates :weight, numericality: { only_integer: true, greater_than_or_equal_to: 1, less_than_or_equal_to: 200 }
-
 
   # Initialization of form values. params are passed from users_controller
   def initialize(params = {})

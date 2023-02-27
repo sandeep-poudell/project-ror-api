@@ -1,5 +1,7 @@
-json.result 'success'
+# frozen_string_literal: true
+
+json.result "success"
 json.created true
 json.data do
-  json.partial! 'users/user', user: @user
+  json.partial! "users/user", user: @user
 end

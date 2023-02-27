@@ -1,4 +1,6 @@
-json.result 'failure'
+# frozen_string_literal: true
+
+json.result "failure"
 json.error do
   json.code @code
   json.url @url

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # password validation format
 PASSWORD_CONTAINS_FORMAT = /\A
     (?=.*[A-Z]) # Must contain an uppercase character
@@ -12,4 +14,4 @@ EMAIL_VALIDATION_FORMAT = /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/
 # katakana validation format
 KANA_VALIDATION_FORMAT = /\A[ァ-ヶー－　]+\z/
 
-GENDER_OPTIONS = %w(male female others)
+GENDER_OPTIONS = %w[male female others].freeze

@@ -1,10 +1,11 @@
-class UsersController < ApplicationController
+# frozen_string_literal: true
 
-  # authenticate_user is a method in Authentication.rb(module) which is a concern file. For checking if user is logged in*
+class UsersController < ApplicationController
+  # authenticate_user is a method in authentication.rb(module) which is a concern file. For checking if user is logged in*
   before_action :authenticate_user, except: %i[create]
 
   # this is required for saving user password in create action
-  require 'bcrypt'
+  require "bcrypt"
 
   def index
     # Initializing User instance as @users
@@ -17,7 +18,6 @@ class UsersController < ApplicationController
   end
 
   def create
-
     # UserCreateForm is class in app>form user_create_form.rb file. Here, form is a object initialized with that class which handles the validation of the form.
     form = UserCreateForm.new(params)
 
@@ -73,10 +73,9 @@ class UsersController < ApplicationController
 
     # Checking validation after assigning value as same as checking validation for form above
     return error_validation(@user.errors) if @user.invalid?
-    byebug
+
     # bang ! is just a naming convention that Ruby programmers use to denote that a method can be “dangerous”
     @user.save
-
   end
 
   def destroy
@@ -84,7 +83,4 @@ class UsersController < ApplicationController
     @user = @current_user
     @user.destroy
   end
-
-  private
-
 end

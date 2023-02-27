@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 
 # Similar to user_create_from with some changes in validations to incorporate updating of data
 class UserUpdateForm
@@ -38,8 +39,12 @@ class UserUpdateForm
     allow_blank: true
   }
   validates :birth_date, presence: true, allow_blank: true
-  validates :height, numericality: { only_integer: true, greater_than_or_equal_to: 50, less_than_or_equal_to: 500, allow_blank: true }
-  validates :weight, numericality: { only_integer: true, greater_than_or_equal_to: 1, less_than_or_equal_to: 200, allow_blank: true }
+  validates :height,
+            numericality: { only_integer: true, greater_than_or_equal_to: 50, less_than_or_equal_to: 500,
+                            allow_blank: true }
+  validates :weight,
+            numericality: { only_integer: true, greater_than_or_equal_to: 1, less_than_or_equal_to: 200,
+                            allow_blank: true }
 
   def initialize(params = {})
     @first_name = params[:first_name]
