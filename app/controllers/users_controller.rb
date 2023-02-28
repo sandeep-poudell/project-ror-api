@@ -69,7 +69,7 @@ class UsersController < ApplicationController
     @user.birth_date = form.birth_date unless form.birth_date.nil?
     @user.height = form.height unless form.height.nil?
     @user.weight = form.weight unless form.weight.nil?
-    @user.set_age(@user.birth_date)
+    @user.calculate_age(@user.birth_date)
 
     # Checking validation after assigning value as same as checking validation for form above
     return error_validation(@user.errors) if @user.invalid?
